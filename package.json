@@ -1,18 +1,20 @@
 {
   "private": true,
   "scripts": {
-    "start": "webpack serve --open",
+    "start": "webpack serve",
     "watch": "webpack --watch",
     "build": "NODE_ENV=production webpack",
     "build-dev": "webpack",
-    "clean": "rm -rf dist"
+    "clean": "rimraf dist && mkdir dist"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.4.0",
+    "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.4.2",
     "postcss": "^8.3.9",
     "postcss-loader": "^6.1.1",
