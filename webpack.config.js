@@ -8,14 +8,15 @@ let mode = "development";
 let target = "web";
 const plugins = [
   new CleanWebpackPlugin(),
-  new miniCssExtractPlugin(),
+  new miniCssExtractPlugin({
+    filename: "css/styles.[fullhash].css",
+  }),
   // {
-  //       filename: "css/styles.[hash].css",
-  //     }
+  //   filename: "css/styles.[fullhash].css",
+  // }
   new htmlWebpackPlugin({
     template: "./src/index.html",
   }),
-
 ];
 
 if (process.env.NODE_ENV === "production") {
@@ -35,6 +36,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "images/[hash][ext][query]",
     // filename: "js/index.[fullhash].js",
+    filename: "js/[contenthash].bundle.js",
   },
 
   module: {
